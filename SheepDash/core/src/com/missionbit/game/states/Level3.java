@@ -144,35 +144,35 @@ public class Level3 extends State {
             sheep.update(dt);
             cam.position.x = sheep.getPosition().x + 80;
             if(System.currentTimeMillis() - startTime > 40000 && !farmer.collides(sheep.getBounds1())) {
-                gsm.set(new Level4(gsm, a));
+                gsm.set(new YouWon(gsm,3,a));
             }
         }
         if (a == 2){
             cow.update(dt);
             cam.position.x = cow.getPosition().x + 80;
             if(System.currentTimeMillis() - startTime > 40000 && !farmer.collides(cow.getCowBounds())) {
-                gsm.set(new Level4(gsm, a));
+                gsm.set(new YouWon(gsm,3,a));
             }
         }
         if (a == 3){
             pig.update(dt);
             cam.position.x = pig.getPosition().x + 80;
             if(System.currentTimeMillis() - startTime > 40000 && !farmer.collides(pig.getPigBounds())) {
-                gsm.set(new Level4(gsm, a));
+                gsm.set(new YouWon(gsm,3,a));
             }
         }
         if (a == 4){
             bunny.update(dt);
             cam.position.x = bunny.getPosition().x + 80;
             if(System.currentTimeMillis() - startTime > 40000 && !farmer.collides(bunny.getBoundsBunny())) {
-                gsm.set(new Level4(gsm, a));
+                gsm.set(new YouWon(gsm,3,a));
             }
         }
         if (a == 5){
             chick.update(dt);
             cam.position.x = chick.getPosition().x + 80;
             if(System.currentTimeMillis() - startTime > 40000 && !farmer.collides(chick.getChickBounds())) {
-                gsm.set(new Level4(gsm, a));
+                gsm.set(new YouWon(gsm,3,a));
             }
         }
         carrot.update(dt);
@@ -187,11 +187,6 @@ public class Level3 extends State {
         timerCheck(dt);
         collisionCheck();
         cam.update();
-
-        if(((System.currentTimeMillis() - startTime) > 45000 & farmer.collides(sheep.getBounds1()) == false)) {
-            gsm.set(new YouWon(gsm,3,a));
-        }
-
     }
 
     public void updateGround() {
